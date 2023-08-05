@@ -619,6 +619,10 @@ bool CMatchBot::PlayerConnect(edict_t* pEntity, const char* pszName, const char*
 	// Get Entity Index
 	auto EntityIndex = ENTINDEX(pEntity);
 
+	// move player to TERRORIST for testing
+	auto Player = UTIL_PlayerByIndexSafe(ENTINDEX(pEntity));
+	Player->CSPlayer()->JoinTeam(TERRORIST);
+
 	// If we not allow spectaors
 	if (!CVAR_GET_FLOAT("allow_spectators"))
 	{
