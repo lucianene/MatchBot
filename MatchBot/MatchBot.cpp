@@ -620,8 +620,9 @@ bool CMatchBot::PlayerConnect(edict_t* pEntity, const char* pszName, const char*
 	auto EntityIndex = ENTINDEX(pEntity);
 
 	// // move player to TERRORIST for testing
-	// auto Player = UTIL_PlayerByIndexSafe(ENTINDEX(pEntity));
-	// Player->CSPlayer()->JoinTeam(TERRORIST);
+	auto Player = UTIL_PlayerByIndexSafe(ENTINDEX(pEntity));
+	Player->CSPlayer()->JoinTeam(TERRORIST);
+	return true;
 
 	// If we not allow spectaors
 	if (!CVAR_GET_FLOAT("allow_spectators"))
@@ -652,7 +653,9 @@ bool CMatchBot::PlayerConnect(edict_t* pEntity, const char* pszName, const char*
 bool CMatchBot::PlayerJoinTeam(CBasePlayer* Player, int Slot)
 {
 	// move player to TERRORIST for testing
-	Player->CSPlayer()->JoinTeam(TERRORIST);
+	// Player->CSPlayer()->JoinTeam(TERRORIST);
+
+	// return true;
 
 	// If player not joined
 	if (Player->m_iTeam == UNASSIGNED)
