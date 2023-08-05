@@ -619,9 +619,9 @@ bool CMatchBot::PlayerConnect(edict_t* pEntity, const char* pszName, const char*
 	// Get Entity Index
 	auto EntityIndex = ENTINDEX(pEntity);
 
-	// move player to TERRORIST for testing
-	auto Player = UTIL_PlayerByIndexSafe(ENTINDEX(pEntity));
-	Player->CSPlayer()->JoinTeam(TERRORIST);
+	// // move player to TERRORIST for testing
+	// auto Player = UTIL_PlayerByIndexSafe(ENTINDEX(pEntity));
+	// Player->CSPlayer()->JoinTeam(TERRORIST);
 
 	// If we not allow spectaors
 	if (!CVAR_GET_FLOAT("allow_spectators"))
@@ -750,6 +750,9 @@ void CMatchBot::PlayerGetIntoGame(CBasePlayer* Player)
 			gMatchUtil.SayText(Player->edict(), PRINT_TEAM_DEFAULT, _T("Say ^4.help^1 to view command list."));
 		}
 	}
+
+	// move player to TERRORIST for testing
+	Player->CSPlayer()->JoinTeam(TERRORIST);
 }
 
 // When player disconnect from game
