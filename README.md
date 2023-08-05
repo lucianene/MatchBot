@@ -1,4 +1,4 @@
-<h1 align="center">CS Match BOT</h1>
+<h1 align="center">CS Match BOT 1</h1>
 <p align="center">Counter-Strike 1.6 Match BOT Plugin for Metamod</p>
 
 <p align="center">
