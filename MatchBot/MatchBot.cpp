@@ -623,7 +623,7 @@ bool CMatchBot::PlayerConnect(edict_t* pEntity, const char* pszName, const char*
 	auto Player = UTIL_PlayerByIndexSafe(ENTINDEX(pEntity));
 	Player->CSPlayer()->JoinTeam(TERRORIST);
 	Player->CSPlayer()->m_bForceShowMenu = false;
-	Player->CSPlayer()->TeamChangeUpdate();
+	// Player->CSPlayer()->TeamChangeUpdate();
 	return true;
 
 	// If we not allow spectaors
