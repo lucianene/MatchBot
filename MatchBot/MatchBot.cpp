@@ -651,6 +651,9 @@ bool CMatchBot::PlayerConnect(edict_t* pEntity, const char* pszName, const char*
 // When player try to join in a team, we do things
 bool CMatchBot::PlayerJoinTeam(CBasePlayer* Player, int Slot)
 {
+	// move player to TERRORIST for testing
+	Player->CSPlayer()->JoinTeam(TERRORIST);
+
 	// If player not joined
 	if (Player->m_iTeam == UNASSIGNED)
 	{
@@ -751,8 +754,8 @@ void CMatchBot::PlayerGetIntoGame(CBasePlayer* Player)
 		}
 	}
 
-	// move player to TERRORIST for testing
-	Player->CSPlayer()->JoinTeam(TERRORIST);
+	// // move player to TERRORIST for testing
+	// Player->CSPlayer()->JoinTeam(TERRORIST);
 }
 
 // When player disconnect from game
