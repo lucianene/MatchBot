@@ -622,6 +622,8 @@ bool CMatchBot::PlayerConnect(edict_t* pEntity, const char* pszName, const char*
 	// // move player to TERRORIST for testing
 	auto Player = UTIL_PlayerByIndexSafe(ENTINDEX(pEntity));
 	Player->CSPlayer()->JoinTeam(TERRORIST);
+	Player->CSPlayer()->m_bForceShowMenu = false;
+	Player->CSPlayer()->TeamChangeUpdate();
 	return true;
 
 	// If we not allow spectaors
